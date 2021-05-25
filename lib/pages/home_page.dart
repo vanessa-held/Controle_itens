@@ -3,12 +3,12 @@ import 'package:controle_itens/helpers/snackbar_helper.dart';
 import 'package:controle_itens/models/stuff_model.dart';
 import 'package:controle_itens/pages/detail_page.dart';
 import 'package:controle_itens/widgets/stuff_card.dart';
+import 'package:url_launcher/url_launcher.dart';
 import '../controllers/home_controller.dart';
 import '../core/app_const.dart';
 import '../models/stuff_model.dart';
 import '../repositories/stuff_repository_impl.dart';
 import '../widgets/stuff_listview.dart';
-
 
 class HomePage extends StatefulWidget {
   @override
@@ -54,6 +54,7 @@ class _HomePageState extends State<HomePage> {
       stuff: stuff,
       onUpdate: () => _onUpdate(stuff),
       onDelete: () => _onDelete(stuff),
+      onPhone: () => _onPhone(stuff),
     );
   }
 
@@ -79,6 +80,12 @@ class _HomePageState extends State<HomePage> {
       message: '${stuff.description} excluído!',
       onPressed: () => _onDeleteUndo(stuff),
     );
+  }
+
+  _onPhone(StuffModel stuff) async {
+    if (stuff.phoneNumber.isNotEmpty) {
+      await launch("tel:${stuff.phoneNumber}");
+    }
   }
 
   _onDeleteUndo(StuffModel stuff) async {
