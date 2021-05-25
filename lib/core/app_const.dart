@@ -1,4 +1,4 @@
-const kTitleHome = 'Memstuff';
+const kTitleHome = 'Lista de itens';
 const kTitleNewLoad = 'Novo empréstimo';
 const kTitleDetails = 'Detalhes';
 const kLabelDescription = 'Descrição';

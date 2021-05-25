@@ -11,7 +11,7 @@ import 'package:controle_itens/widgets/date_input_field.dart';
 import 'package:controle_itens/widgets/loading_dialog.dart';
 import 'package:controle_itens/widgets/photo_input_area.dart';
 import 'package:controle_itens/widgets/primary_button.dart';
-import 'package:controle_itens/widgets/text_input_field.dart';
+
 import 'package:flutter/services.dart';
 
 class DetailPage extends StatefulWidget {
@@ -63,21 +63,24 @@ class _DetailPageState extends State<DetailPage> {
           TextFormField(
             decoration: InputDecoration(
                 labelText: kLabelDescription,
-                icon: Icon(Icons.description_outlined)),
+                icon: Icon(Icons.description_outlined, color:Color.alphaBlend(Colors.transparent, Colors.deepPurple[200]))
+                ),
             initialValue: widget.stuff?.description ?? '',
             onSaved: _controller.setDescription,
             validator: (text) => ValidatorHelper.isNotEmptyNumber(text),
           ),
           TextFormField(
             decoration: InputDecoration(
-                labelText: kLabelName, icon: Icon(Icons.person_outline)),
+                labelText: kLabelName, 
+                icon: Icon(Icons.person_outline, color:Color.alphaBlend(Colors.transparent, Colors.deepPurple[200]))),
             initialValue: widget.stuff?.contactName ?? '',
             onSaved: _controller.setName,
             validator: (text) => ValidatorHelper.isNotEmptyNumber(text),
           ),
           TextFormField(
             decoration: InputDecoration(
-                labelText: kLabelTelefone, icon: Icon(Icons.phone_android)),
+                labelText: kLabelTelefone, 
+                icon: Icon(Icons.phone_android, color:Color.alphaBlend(Colors.transparent, Colors.deepPurple[200]))),
             keyboardType: TextInputType.number,
             initialValue: widget.stuff?.phoneNumber ?? '',
             onSaved: _controller.setPhone,

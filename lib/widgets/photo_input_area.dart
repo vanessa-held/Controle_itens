@@ -13,7 +13,7 @@ class PhotoInputArea extends StatefulWidget {
   const PhotoInputArea({
     Key key,
     this.height = 200.0,
-    this.radius = 10.0,
+    this.radius = 20.0,
     this.initialValue,
     this.icon = Icons.add_a_photo_outlined,
     this.onChanged,
@@ -42,15 +42,15 @@ class _PhotoInputAreaState extends State<PhotoInputArea> {
       child: Container(
         height: widget.height,
         decoration: BoxDecoration(
-          border: Border.all(color: Colors.black26),
+          border: Border.all(color: Colors.deepPurple[200]),
           borderRadius: BorderRadius.circular(widget.radius),
         ),
         child: Center(
           child: _image == null
               ? Icon(
                   widget.icon,
-                  size: widget.height * 0.3,
-                  color: Colors.black26,
+                  size: widget.height * 0.5,
+                  color: Colors.deepPurple[200],
                 )
               : Image.file(_image, fit: BoxFit.cover),
         ),

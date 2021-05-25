@@ -1,22 +1,22 @@
 import 'dart:io';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
-
 import 'package:controle_itens/models/stuff_model.dart';
-
 import '../helpers/date_helper.dart';
+
 
 class StuffCard extends StatelessWidget {
   final StuffModel stuff;
   final Function onUpdate;
   final Function onDelete;
+  final Function onPhone;
 
   const StuffCard({
     Key key,
     this.stuff,
     this.onUpdate,
     this.onDelete,
+    this.onPhone,
   }) : super(key: key);
 
   @override
@@ -28,9 +28,15 @@ class StuffCard extends StatelessWidget {
       actions: <Widget>[
         IconSlideAction(
           caption: 'Excluir',
-          color: Theme.of(context).accentColor,
+          color: Colors.redAccent,
           icon: Icons.delete,
           onTap: onDelete,
+        ),
+        IconSlideAction(
+          caption: 'Ligar',
+          color: Colors.greenAccent,
+          icon: Icons.call,
+          onTap: onPhone,
         ),
       ],
     );

@@ -43,8 +43,8 @@ class _DateInputFieldState extends State<DateInputField> {
     return TextFormField(
       onSaved: widget.onSaved,
       decoration: InputDecoration(
-        prefixIcon: Icon(Icons.date_range_outlined),
-        suffixIcon: Icon(Icons.arrow_drop_down),
+        prefixIcon: Icon(Icons.date_range_outlined,color:Color.alphaBlend(Colors.transparent, Colors.deepPurple[200])),
+        suffixIcon: Icon(Icons.arrow_drop_down,color:Color.alphaBlend(Colors.transparent, Colors.deepPurple[200])),
         labelText: widget.label,
       ),
       readOnly: true,

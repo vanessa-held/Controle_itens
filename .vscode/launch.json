@@ -1,0 +1,10 @@
+{
+    "configurations": [
+        {
+            "name": "controle_itens (Flutter)",
+            "program": "lib/main.dart",
+            "request": "launch",
+            "type": "dart"
+        }
+    ]
+}
